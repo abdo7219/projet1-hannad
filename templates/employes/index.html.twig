@@ -31,7 +31,7 @@
       <td>{{ employer.email }}</td>
       <td>{{ employer.adresse }}</td>
       <td>{{ employer.salaire }}</td>
-      <td>{{ employer.datedenaissance|date("d-M-Y") }}</td>
+      <td>{{ employer.datedenaissance|date("d-m-Y" ) }}</td>
 <td>
    <th>
       <a href="{{ path('employes_edit', {id:employer.id} ) }}"><i class="fa-solid fa-pen-to-square"></i></a>

@@ -23,16 +23,6 @@ class EmployerController extends AbstractController
         ]);
     }
 
-
-
-    #[Route('/', name: 'home')]
-    public function home(): Response
-    {
-        return $this->render('employes/home.html.twig');
-    
-    
-    }
-
     #[Route('/employes/new', name: 'employes_create')]
     #[Route('/employes/edit/{id}', name: 'employes_edit')]
 

@@ -53,9 +53,10 @@ class Employer
     private ?float $salaire = null;
 
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
 
     private ?\DateTimeInterface $datedenaissance = null;
+
 
     public function getId(): ?int
     {
