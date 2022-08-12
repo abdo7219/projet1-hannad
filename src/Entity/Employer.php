@@ -14,21 +14,21 @@ class Employer
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\Length(min:7 , max:255, minMessage:"Pas assez de caractères, Il faut au moins  {{ limit }} caractères." )]
+    #[Assert\Length(min:3 , max:255, minMessage:"Pas assez de caractères, Il faut au moins  {{ limit }} caractères." )]
     #[Assert\NotBlank(message:"Ce champ ne doit pas être vide !")]
     private ?string $prenom = null;
 
     
 
     #[ORM\Column(length: 255)]
-    #[Assert\Length(min:7 , max:255, minMessage:"Pas assez de caractères, Il faut au moins  {{ limit }} caractères." )]
+    #[Assert\Length(min:3 , max:255, minMessage:"Pas assez de caractères, Il faut au moins  {{ limit }} caractères." )]
     #[Assert\NotBlank(message:"Ce champ ne doit pas être vide !")]
 
     private ?string $nom = null;
 
 
     #[ORM\Column(length: 255)]
-    #[Assert\Regex(pattern:"/^[a-z]+$/i", htmlPattern: '^[a-zA-Z]+$')]
+    #[Assert\Regex(pattern:"/^[0-9]+$/i", htmlPattern: '^[0-9]+$')]
     #[Assert\NotBlank(message: "format non valide")]
     private ?string $telephone = null;
 
@@ -52,7 +52,8 @@ class Employer
     #[Assert\NotBlank(message: "format non valide")]
     private ?float $salaire = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+
     private ?\DateTimeInterface $datedenaissance = null;
 
     public function getId(): ?int
