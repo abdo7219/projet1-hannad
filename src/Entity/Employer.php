@@ -52,6 +52,7 @@ class Employer
     #[Assert\NotBlank(message: "format non valide")]
     private ?float $salaire = null;
 
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
 
     private ?\DateTimeInterface $datedenaissance = null;

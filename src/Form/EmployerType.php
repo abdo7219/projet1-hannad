@@ -21,12 +21,12 @@ class EmployerType extends AbstractType
             ->add('adresse', TextType::class)
             ->add('poste', TextType::class)
             ->add('salaire')
-            ->add('datedenaissance', DateType::class,array(
-                'widget' => 'choice',
-                'years' => range(date('Y')-70, date('Y')-14),
-                'format' => 'dd-MM-yyyy',));
-
-        ;
+            ->add('datedenaissance', DateType::class, [
+                'label' => "Date de naissance : ",
+                'format' => 'dd MM yyyy',
+                'years' => range(date('1950'), date('Y')-14),
+            ]
+);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
