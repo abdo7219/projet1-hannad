@@ -1,0 +1,103 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+{#<h1>
+{% if editMode %}
+     modification de l'article
+{% else %}
+    Création d'un article
+{% endif %}
+</h1>#}
+<div class="container col-8">
+{{ form_start(formEmployer, {
+    attr: {
+    novalidate: 'novalidate'
+    }
+})}}
+
+
+
+{#=============Formulaire enployer========================================#}
+ 
+ 
+ {{ form_row(formEmployer.prenom, {
+    label: "Prenom",
+    attr: {
+        placeholder: "Prenom"
+    }
+}) }}
+<br>
+{{ form_row(formEmployer.nom, {
+    label:"nom",
+    attr: {
+        placeholder: "nom"
+    }
+}) }}
+<br>
+{{ form_row(formEmployer.telephone,{
+        label:"telephone",
+        attr: {
+            placeholder: "Telephone"
+        }
+        }
+
+)}}
+<br>
+{{ form_row(formEmployer.email,{
+        label:"email",
+        attr: {
+            placeholder: "Email"
+        }
+        }
+
+)}}
+<br>
+{{ form_row(formEmployer.adresse,{
+        label:"adresse",
+        attr: {
+            placeholder: "Adresse"
+        }
+        }
+
+)}}
+<br>
+{{ form_row(formEmployer.salaire,{
+        label:"salaire",
+        attr: {
+            placeholder: "Salaire"
+        }
+        }
+
+)}}
+<br>
+{{ form_row(formEmployer.datedenaissance,{
+        label:"datedenaissance",
+        attr: {
+            placeholder: "DateDeNaissance"
+        }
+        }
+
+)}}
+<br>
+{{ form_row(formEmployer.poste,{
+        label:"poste",
+        attr: {
+            placeholder: "Poste"
+        }
+        }
+
+)}}
+<br>
+<button type="submit" class="btn btn-primary mt-2">
+{% if editMode %}
+    Enregistrer les modification
+{% else %}
+    Ajouter l'employer
+{% endif %}
+</button>
+
+{{ form_end(formEmployer)}}
+<p class="text-center"><a href=" {{ path('app_employer') }}" class="btn btn-primary mt-5">Retour à l'annuaire employés</a></p>
+</div>
+ {% endblock %}
